@@ -22,22 +22,36 @@
             width: 80%; /* Nastavení šířky přehrávače */
             max-width: 500px; /* Maximální šířka přehrávače */
         }
+        button {
+            margin-top: 20px;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
-    <!-- Přehrávač pro MP3 soubor s automatickým spuštěním a ztlumením zvuku -->
-    <audio id="audioPlayer" controls autoplay muted>
+    <!-- Tlačítko pro spuštění zvuku -->
+    <button onclick="playAudio()">Spustit hudbu</button>
+
+    <!-- Přehrávač pro MP3 soubor -->
+    <audio id="audioPlayer">
         <source src="king.mp3" type="audio/mp3">
         Váš prohlížeč nepodporuje přehrávání audia.
     </audio>
 
     <script>
-        // Po načtení stránky (nebo když uživatel interaguje), odmute zvuk
-        window.onload = function() {
+        // Funkce pro přehrání zvuku po kliknutí
+        function playAudio() {
             var audio = document.getElementById('audioPlayer');
-            // Zajištění, že po načtení bude zvuk odmutován
-            audio.muted = false;
-        };
+            audio.play();  // Spustí přehrávání
+        }
     </script>
 </body>
 </html>
