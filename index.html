@@ -25,17 +25,18 @@
     </style>
 </head>
 <body>
-    <!-- Přehrávač pro MP3 soubor -->
-    <audio id="audioPlayer" controls>
+    <!-- Přehrávač pro MP3 soubor s automatickým spuštěním a ztlumením zvuku -->
+    <audio id="audioPlayer" controls autoplay muted>
         <source src="king.mp3" type="audio/mp3">
         Váš prohlížeč nepodporuje přehrávání audia.
     </audio>
 
     <script>
-        // JavaScript pro automatické spuštění zvuku při načtení stránky
+        // Po načtení stránky (nebo když uživatel interaguje), odmute zvuk
         window.onload = function() {
             var audio = document.getElementById('audioPlayer');
-            audio.play();
+            // Zajištění, že po načtení bude zvuk odmutován
+            audio.muted = false;
         };
     </script>
 </body>
