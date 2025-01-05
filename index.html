@@ -5,29 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MP3 Přehrávač s Obrázkem</title>
     <style>
+        /* Nastavení obrázku jako pozadí celé stránky */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-image: url('kocka.jpg');
+            background-size: cover; /* Obrázek pokryje celou plochu */
+            background-position: center; /* Obrázek bude vycentrován */
+            background-attachment: fixed; /* Obrázek bude fixní při posouvání stránky */
+            color: white; /* Nastavení barvy textu pro lepší kontrast s pozadím */
+            margin: 0;
+            height: 100vh; /* Výška stránky bude vždy na výšku celého okna */
         }
-        img {
+        h1 {
             margin-top: 20px;
-            width: 50%;
-            max-width: 300px;
+            font-size: 3em; /* Velikost nadpisu */
         }
         audio {
             margin-top: 20px;
-            width: 100%;
+            width: 80%; /* Nastavení šířky přehrávače */
+            max-width: 500px; /* Maximální šířka přehrávače */
         }
     </style>
 </head>
 <body>
     <h1>Vítejte na mé stránce!</h1>
-    
-    <!-- Obrázek kočky (místní soubor) -->
-    <img src="kocka.jpg" alt="Kočka">
-    
-    <br><br>
     
     <!-- Přehrávač pro MP3 soubor (automatické spuštění) -->
     <audio controls autoplay>
