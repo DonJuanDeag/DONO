@@ -22,18 +22,34 @@
             width: 80%; /* Nastavení šířky přehrávače */
             max-width: 500px; /* Maximální šířka přehrávače */
         }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
+    <h1>Vítejte! Klikněte pro přehrání hudby:</h1>
+    
+    <!-- Tlačítko pro spuštění hudby -->
+    <button onclick="playMusic()">Spustit hudbu</button>
+
     <!-- Přehrávač pro MP3 soubor -->
     <audio id="audioPlayer" controls>
-        <source src="https://www.dropbox.com/scl/fi/9pa6rjby98letz8kotb7b/The-Lion-King-Orchestra-Suite-Official-Audio-The-World-of-Hans-Zimmer-A-Symphonic-mp3cut.net.mp3?rlkey=l0oa795ky8sziubnt7p3epyru&st=qjzzu2i2&dl=1" type="audio/mp3"> <!-- Opravený odkaz pro Dropbox s ?dl=1 -->
+        <source src="https://www.dropbox.com/scl/fi/9pa6rjby98letz8kotb7b/The-Lion-King-Orchestra-Suite-Official-Audio-The-World-of-Hans-Zimmer-A-Symphonic-mp3cut.net.mp3?rlkey=l0oa795ky8sziubnt7p3epyru&st=qjzzu2i2&dl=1" type="audio/mp3">
         Váš prohlížeč nepodporuje přehrávání audia.
     </audio>
 
     <script>
-        // Funkce pro automatické přehrání audia po načtení stránky
-        window.onload = function() {
+        // Funkce pro přehrání hudby po kliknutí na tlačítko
+        function playMusic() {
             var audio = document.getElementById('audioPlayer');
             audio.play();  // Spustí přehrávání
         }
